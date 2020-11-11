@@ -2,19 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Vue Stripe - Stripe Checkout & Elements for Vue.js</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <h1>Shut up and take my money!</h1>
+  </div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
-    }
+      coverpage: {
+        '/': '_coverpage.md',
+        '/vue-stripe-checkout': 'vue-stripe-checkout/cover.md',
+        '/vue-stripe-elements': 'vue-stripe-elements/cover.md'
+      },
+      name: 'Vue Stripe',
+      repo: 'https://github.com/vue-stripe/docs',
+      loadSidebar: true,
+      loadNavbar: true,
+      themeColor: '#635BFF',
+    };
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
