@@ -1,0 +1,25 @@
+name: Deploy:Production
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [10]
+    steps: 
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install Firebase Tools
+        run: npm install firebase-tools -g
+      - name: Run deploy
+        env: 
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase deploy --only hosting:vue-stripe-docs
